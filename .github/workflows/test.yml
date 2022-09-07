@@ -1,0 +1,13 @@
+name: basic action
+on: [push]
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        env: 
+          GITHUB_CONTEXT : ${{toJson(github)}}
+        run:
+          echo "$GIHUB_CONTEXT"
+
+
